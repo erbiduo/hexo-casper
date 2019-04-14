@@ -1,8 +1,8 @@
 # Config
 rss:            # link
-favicon: https://i.loli.net/2019/03/17/5c8e01ff0671b.png
+favicon: /img/favicon.png
 blog_logo: 
-header_image: https://i.loli.net/2019/03/17/5c8e0210af676.jpg
+header_image: /img/header_image.jpg
 bio: Draw the dream
 post_toc: true
 
@@ -16,7 +16,7 @@ menu:
   # you can add here
 
 # author
-author_image:  https://i.loli.net/2019/03/17/5c8e01a864e2e.png # link
+author_image:  /img/author_image.jpg # link
 author_bio: 二多不二
 author_location: Fuzhou
 
