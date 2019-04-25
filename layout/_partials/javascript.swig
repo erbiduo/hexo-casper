@@ -89,6 +89,41 @@
     });
 </script>
 {% endif %}
+
+{# viewer相册 #}
+{% if theme.viewer %}
+{{ js('js/viewer.min') }}
+{{ css('css/viewer.min') }}
+	<script type="text/javascript">
+	//默认设置， 可以根据个人需求和喜好进行配置
+	//详细参考官方说明
+	Viewer.setDefaults({
+		//设置初始缩放 default: 1
+		zoomRatio : [0.5],
+		//设置滚轮缩放比率 default: 0.1
+		show: function () {
+			this.viewer.zoomTo(0.5);
+		},
+		});
+	//获得content中所有的图片， 不同主题可能有所不同
+	//为了和其他的图片区别开来 所以在markdown中插入图片的时候使用独特的记号
+	//为了一次性得到所有的图片我这里采用的是class = 'post-img'
+	var article = document.querySelector('.markdown-body');
+	var imageList = article.getElementsByClassName('post-img');
+	//将获取到的HTMLCollections转化成Array
+	var imageArray = new Array();
+	Array.prototype.forEach.call(imageList, element => {
+		imageArray.push(element);
+	});
+	//设置每个图片成为图片组
+	Array.prototype.forEach.call(imageList, element => {
+		var viewer1 = new Viewer(element);
+		viewer1.images = imageArray;
+		viewer1.length = imageArray.length;
+	});
+	</script>
+{% endif %}
+
 {% endif %}
 
 {# 本地搜索 #}

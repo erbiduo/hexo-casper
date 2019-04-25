@@ -24,7 +24,7 @@
 	{{ css('css/style') }}
 	{{ css('css/markdown') }}
 	{{ css('css/highlight') }} #}
-	
+	{{ css('css/viewer.min') }} #}
 	{{ css('css/allinone.min') }}
 
 	{% if theme.googleAnalytics %}
